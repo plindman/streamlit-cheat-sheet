@@ -31,16 +31,21 @@ def checkbox_elements():
     st.subheader("st.sidebar.checkbox")
     st.markdown(f"Creates a checkbox in the sidebar. Returns `True` if checked. Checkbox selected: <span style='color: {color};'>{st.session_state.checkbox_selected}</span>.", unsafe_allow_html=True)    
 
+def radio_elements():
+    st.sidebar.subheader("st.sidebar.radio")
+    radio_option = st.sidebar.radio("Choose an option", ["Option 1", "Option 2", "Option 3"])
+
+    color = getattr(config.colors.radios, radio_option or "default")
+
+    st.subheader("st.sidebar.radio")
+    st.markdown(f"Creates a set of radio buttons in the sidebar. Returns the selected option. Selected radio: <span style='color: {color};'>{radio_option}</span>.", unsafe_allow_html=True)    
+
 def sidebar_elements():
     st.sidebar.title("Streamlit Sidebar Elements Cheat Sheet")
 
     button_elements()
     checkbox_elements()
-    
-    st.sidebar.subheader("st.sidebar.radio")
-    st.sidebar.write("Creates a set of radio buttons in the sidebar. Returns the selected option.")
-    radio_option = st.sidebar.radio("Choose an option", ["Option 1", "Option 2", "Option 3"])
-    st.sidebar.write(f"Selected option: {radio_option}")
+    radio_elements()    
     
     st.sidebar.subheader("st.sidebar.selectbox")
     st.sidebar.write("Creates a dropdown select box in the sidebar. Returns the selected option.")

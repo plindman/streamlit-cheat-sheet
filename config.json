@@ -2,6 +2,12 @@
     "colors": {
         "highlight": "lightcoral",
         "positive": "lightgreen",
-        "negative": "lightcoral"
+        "negative": "lightcoral",
+        "radios": {
+            "Option 1": "#add8e6",
+            "Option 2": "#ffb6c1",
+            "Option 3": "#ffffe0",
+            "default":  "#FFFAF0"
+        }
     }
 }
