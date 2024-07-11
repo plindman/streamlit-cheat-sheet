@@ -74,41 +74,41 @@ def sidebar_elements():
     multiselect_elements()
     slider_elements()
     
-    st.sidebar.subheader("st.sidebar.text_input")
-    st.sidebar.write("Creates a text input box in the sidebar. Returns the entered text.")
+    # st.sidebar.write("Creates a text input box in the sidebar. Returns the entered text.")
     text_input = st.sidebar.text_input("Enter some text")
-    st.sidebar.write(f"Entered text: {text_input}")
+    st.subheader("st.sidebar.text_input")
+    st.write(f"Entered text: {text_input}")
     
-    st.sidebar.subheader("st.sidebar.text_area")
-    st.sidebar.write("Creates a text area in the sidebar. Returns the entered text.")
+    # st.sidebar.write("Creates a text area in the sidebar. Returns the entered text.")
     text_area = st.sidebar.text_area("Enter some text")
-    st.sidebar.write(f"Entered text: {text_area}")
+    st.subheader("st.sidebar.text_area")
+    st.write(f"Entered text: {text_area}")
     
-    st.sidebar.subheader("st.sidebar.number_input")
-    st.sidebar.write("Creates a number input box in the sidebar. Returns the entered number.")
+    # st.sidebar.write("Creates a number input box in the sidebar. Returns the entered number.")
     number_input = st.sidebar.number_input("Enter a number", 0, 100)
-    st.sidebar.write(f"Entered number: {number_input}")
+    st.subheader("st.sidebar.number_input")
+    st.write(f"Entered number: {number_input}")
     
-    st.sidebar.subheader("st.sidebar.date_input")
-    st.sidebar.write("Creates a date input in the sidebar. Returns the selected date.")
+    # st.sidebar.write("Creates a date input in the sidebar. Returns the selected date.")
     date_input = st.sidebar.date_input("Select a date")
-    st.sidebar.write(f"Selected date: {date_input}")
+    st.subheader("st.sidebar.date_input")
+    st.write(f"Selected date: {date_input}")
     
-    st.sidebar.subheader("st.sidebar.time_input")
-    st.sidebar.write("Creates a time input in the sidebar. Returns the selected time.")
+    # st.sidebar.write("Creates a time input in the sidebar. Returns the selected time.")
     time_input = st.sidebar.time_input("Select a time")
-    st.sidebar.write(f"Selected time: {time_input}")
+    st.subheader("st.sidebar.time_input")
+    st.write(f"Selected time: {time_input}")
     
-    st.sidebar.subheader("st.sidebar.file_uploader")
-    st.sidebar.write("Creates a file uploader in the sidebar. Returns the uploaded file.")
+    # st.sidebar.write("Creates a file uploader in the sidebar. Returns the uploaded file.")
     uploaded_file = st.sidebar.file_uploader("Upload a file")
+    st.subheader("st.sidebar.file_uploader")
     if uploaded_file is not None:
-        st.sidebar.write(f"Uploaded file: {uploaded_file.name}")
+        st.write(f"Uploaded file: {uploaded_file.name}")
     
-    st.sidebar.subheader("st.sidebar.color_picker")
-    st.sidebar.write("Creates a color picker in the sidebar. Returns the selected color.")
+    # st.sidebar.write("Creates a color picker in the sidebar. Returns the selected color.")
     color = st.sidebar.color_picker("Pick a color", "#00f900")
-    st.sidebar.write(f"Selected color: {color}")
+    st.subheader("st.sidebar.color_picker")
+    st.write(f"Selected color: {color}")
 
 def main():
     
