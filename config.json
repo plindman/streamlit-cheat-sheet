@@ -8,6 +8,12 @@
             "Option 2": "#ffb6c1",
             "Option 3": "#ffffe0",
             "default":  "#FFFAF0"
+        },
+        "select": {
+            "Select 1": "#add8e6",
+            "Select 2": "#ffb6c1",
+            "Select 3": "#ffffe0",
+            "default":  "#FFFAF0"
         }
     }
 }
