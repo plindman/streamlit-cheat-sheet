@@ -1,25 +1,39 @@
 import streamlit as st
 
+# Function to load file content
+def load_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
+
 def init_page():
     if 'button_clicked_count' not in st.session_state:
         st.session_state.button_clicked_count = 0
         st.session_state.checkbox_selected = False
 
-def sidebar_elements():
-    st.sidebar.title("Streamlit Sidebar Elements Cheat Sheet")
-    
+def button_elements():
     st.sidebar.subheader("st.sidebar.button")
-    st.sidebar.write("Returns `True` if clicked and increments click count")
     if st.sidebar.button('Click Me'):
         st.session_state.button_clicked_count += 1
-    
+
+    st.subheader("st.sidebar.button")
+    st.write(f"Button returns `True` if clicked and increments click count. Button clicked {st.session_state.button_clicked_count} times")
+
+def checkbox_elements():
     st.sidebar.subheader("st.sidebar.checkbox")
-    st.sidebar.write("Creates a checkbox in the sidebar. Returns `True` if checked.")
     if st.sidebar.checkbox('Check Me'):
         st.session_state.checkbox_selected = True
     else:
         st.session_state.checkbox_selected = False
 
+    st.subheader("st.sidebar.checkbox")
+    st.write(f"Creates a checkbox in the sidebar. Returns `True` if checked. Checkbox selected: {st.session_state.checkbox_selected}")
+
+def sidebar_elements():
+    st.sidebar.title("Streamlit Sidebar Elements Cheat Sheet")
+
+    button_elements()
+    checkbox_elements()
+    
     st.sidebar.subheader("st.sidebar.radio")
     st.sidebar.write("Creates a set of radio buttons in the sidebar. Returns the selected option.")
     radio_option = st.sidebar.radio("Choose an option", ["Option 1", "Option 2", "Option 3"])
@@ -84,7 +98,5 @@ def main():
     st.write("Explore different Streamlit sidebar elements and see how they work.")
     sidebar_elements()
 
-    st.write(f"Button clicked {st.session_state.button_clicked_count} times")
-    st.write(f"Checkbox selected: {st.session_state.checkbox_selected}")
 if __name__ == "__main__":
     main()
