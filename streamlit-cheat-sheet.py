@@ -10,7 +10,7 @@ def init_page():
         st.session_state.checkbox_selected = False
 
 def button_elements():
-    st.sidebar.subheader("st.sidebar.button")
+    # st.sidebar.subheader("st.sidebar.button")
     if st.sidebar.button('Click Me'):
         st.session_state.button_clicked_count += 1
 
@@ -20,7 +20,7 @@ def button_elements():
     st.markdown(f"Button returns `True` if clicked and increments click count. Button clicked <span style='color: {color};'>{st.session_state.button_clicked_count} times</span>.", unsafe_allow_html=True)    
 
 def checkbox_elements():
-    st.sidebar.subheader("st.sidebar.checkbox")
+    # st.sidebar.subheader("st.sidebar.checkbox")
     if st.sidebar.checkbox('Check Me'):
         st.session_state.checkbox_selected = True
     else:
@@ -32,7 +32,7 @@ def checkbox_elements():
     st.markdown(f"Creates a checkbox in the sidebar. Returns `True` if checked. Checkbox selected: <span style='color: {color};'>{st.session_state.checkbox_selected}</span>.", unsafe_allow_html=True)    
 
 def radio_elements():
-    st.sidebar.subheader("st.sidebar.radio")
+    # st.sidebar.subheader("st.sidebar.radio")
     radio_option = st.sidebar.radio("Choose an option", ["Option 1", "Option 2", "Option 3"],
                                     horizontal=True)
 
@@ -42,7 +42,7 @@ def radio_elements():
     st.markdown(f"Creates a set of radio buttons in the sidebar. Returns the selected option. Selected radio: <span style='color: {color};'>{radio_option}</span>.", unsafe_allow_html=True)    
 
 def select_elements():
-    st.sidebar.subheader("st.sidebar.selectbox")
+    # st.sidebar.subheader("st.sidebar.selectbox")
     selectbox_option = st.sidebar.selectbox("Choose an option", ["Select 1", "Select 2", "Select 3"])
 
     color = getattr(config.colors.select, selectbox_option or "default")
@@ -51,7 +51,7 @@ def select_elements():
     st.markdown(f"Creates a dropdown select box in the sidebar. Returns the selected option. Selected option: <span style='color: {color};'>{selectbox_option}</span>.", unsafe_allow_html=True) 
 
 def multiselect_elements():
-    st.sidebar.subheader("st.sidebar.multiselect")
+    # st.sidebar.subheader("st.sidebar.multiselect")
     multiselect_options = st.sidebar.multiselect("Choose options", ["Multi 1", "Multi 2", "Multi 3"])
 
     st.subheader("st.sidebar.multiselect")
