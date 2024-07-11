@@ -33,29 +33,38 @@ def checkbox_elements():
 
 def radio_elements():
     st.sidebar.subheader("st.sidebar.radio")
-    radio_option = st.sidebar.radio("Choose an option", ["Option 1", "Option 2", "Option 3"])
+    radio_option = st.sidebar.radio("Choose an option", ["Option 1", "Option 2", "Option 3"],
+                                    horizontal=True)
 
     color = getattr(config.colors.radios, radio_option or "default")
 
     st.subheader("st.sidebar.radio")
     st.markdown(f"Creates a set of radio buttons in the sidebar. Returns the selected option. Selected radio: <span style='color: {color};'>{radio_option}</span>.", unsafe_allow_html=True)    
 
+def select_elements():
+    st.sidebar.subheader("st.sidebar.selectbox")
+    selectbox_option = st.sidebar.selectbox("Choose an option", ["Select 1", "Select 2", "Select 3"])
+
+    color = getattr(config.colors.select, selectbox_option or "default")
+
+    st.subheader("st.sidebar.selectbox")
+    st.markdown(f"Creates a dropdown select box in the sidebar. Returns the selected option. Selected option: <span style='color: {color};'>{selectbox_option}</span>.", unsafe_allow_html=True) 
+
+def multiselect_elements():
+    st.sidebar.subheader("st.sidebar.multiselect")
+    multiselect_options = st.sidebar.multiselect("Choose options", ["Multi 1", "Multi 2", "Multi 3"])
+
+    st.subheader("st.sidebar.multiselect")
+    st.markdown(f"Creates a multi-select box in the sidebar. Returns a list of selected options. Selected options: {multiselect_options}", unsafe_allow_html=True) 
+
 def sidebar_elements():
     st.sidebar.title("Streamlit Sidebar Elements Cheat Sheet")
 
     button_elements()
     checkbox_elements()
-    radio_elements()    
-    
-    st.sidebar.subheader("st.sidebar.selectbox")
-    st.sidebar.write("Creates a dropdown select box in the sidebar. Returns the selected option.")
-    selectbox_option = st.sidebar.selectbox("Choose an option", ["Option 1", "Option 2", "Option 3"])
-    st.sidebar.write(f"Selected option: {selectbox_option}")
-    
-    st.sidebar.subheader("st.sidebar.multiselect")
-    st.sidebar.write("Creates a multi-select box in the sidebar. Returns a list of selected options.")
-    multiselect_options = st.sidebar.multiselect("Choose options", ["Option 1", "Option 2", "Option 3"])
-    st.sidebar.write(f"Selected options: {multiselect_options}")
+    radio_elements()
+    select_elements()
+    multiselect_elements()
     
     st.sidebar.subheader("st.sidebar.slider")
     st.sidebar.write("Creates a slider in the sidebar. Returns the selected value(s).")
