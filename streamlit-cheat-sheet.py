@@ -57,6 +57,13 @@ def multiselect_elements():
     st.subheader("st.sidebar.multiselect")
     st.markdown(f"Creates a multi-select box in the sidebar. Returns a list of selected options. Selected options: {multiselect_options}", unsafe_allow_html=True) 
 
+def slider_elements():
+    # st.sidebar.subheader("st.sidebar.slider")
+    slider_value = st.sidebar.slider("Select a range", 0, 100, (25, 75))
+    
+    st.subheader("st.sidebar.slider")
+    st.write(f"Creates a slider in the sidebar. Returns the selected value(s). Selected range: {slider_value}")
+
 def sidebar_elements():
     st.sidebar.title("Streamlit Sidebar Elements Cheat Sheet")
 
@@ -65,12 +72,8 @@ def sidebar_elements():
     radio_elements()
     select_elements()
     multiselect_elements()
+    slider_elements()
     
-    st.sidebar.subheader("st.sidebar.slider")
-    st.sidebar.write("Creates a slider in the sidebar. Returns the selected value(s).")
-    slider_value = st.sidebar.slider("Select a range", 0, 100, (25, 75))
-    st.sidebar.write(f"Selected range: {slider_value}")
-
     st.sidebar.subheader("st.sidebar.text_input")
     st.sidebar.write("Creates a text input box in the sidebar. Returns the entered text.")
     text_input = st.sidebar.text_input("Enter some text")
