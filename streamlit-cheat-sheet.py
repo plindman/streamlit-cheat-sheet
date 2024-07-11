@@ -1,9 +1,8 @@
 import streamlit as st
 
-# Function to load file content
-def load_file(file_path):
-    with open(file_path, 'r') as file:
-        return file.read()
+# Load the configuration
+from config_loader import load_config
+config = load_config('config.json')
 
 def init_page():
     if 'button_clicked_count' not in st.session_state:
@@ -15,8 +14,10 @@ def button_elements():
     if st.sidebar.button('Click Me'):
         st.session_state.button_clicked_count += 1
 
+    color = config.colors.positive if st.session_state.button_clicked_count > 0 else config.colors.negative
+
     st.subheader("st.sidebar.button")
-    st.write(f"Button returns `True` if clicked and increments click count. Button clicked {st.session_state.button_clicked_count} times")
+    st.markdown(f"Button returns `True` if clicked and increments click count. Button clicked <span style='color: {color};'>{st.session_state.button_clicked_count} times</span>.", unsafe_allow_html=True)    
 
 def checkbox_elements():
     st.sidebar.subheader("st.sidebar.checkbox")
@@ -25,8 +26,10 @@ def checkbox_elements():
     else:
         st.session_state.checkbox_selected = False
 
+    color = config.colors.positive if st.session_state.checkbox_selected else config.colors.negative
+
     st.subheader("st.sidebar.checkbox")
-    st.write(f"Creates a checkbox in the sidebar. Returns `True` if checked. Checkbox selected: {st.session_state.checkbox_selected}")
+    st.markdown(f"Creates a checkbox in the sidebar. Returns `True` if checked. Checkbox selected: <span style='color: {color};'>{st.session_state.checkbox_selected}</span>.", unsafe_allow_html=True)    
 
 def sidebar_elements():
     st.sidebar.title("Streamlit Sidebar Elements Cheat Sheet")
