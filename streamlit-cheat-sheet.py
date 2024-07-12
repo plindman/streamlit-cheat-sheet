@@ -110,6 +110,14 @@ def sidebar_elements():
     st.subheader("st.sidebar.color_picker")
     st.write(f"Selected color: {color}")
 
+
+## running 
+init_page()
+
+st.title("Streamlit Sidebar Elements Cheat Sheet")
+st.write("Explore different Streamlit sidebar elements and see how they work.")
+sidebar_elements()
+
 def main():
     
     init_page()
