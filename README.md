@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ## Usage
 ```bash
-streamlit run streamlit_cheat_sheet.py
+streamlit run streamlit_app.py
 ```
 
 Open a web browser and navigate to the URL provided by the Streamlit output (usually http://localhost:8501).
