@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Sidebar elements",
+        "description": "Summary of sidebar elements",
+        "link": "streamlit-sidebar-elements.py"
+    },
+    {
+        "title": "st.write",
+        "description": "Writes content to the app",
+        "link": "https://docs.streamlit.io/library/api-reference/write-magic/st.write"
+    }
+]
